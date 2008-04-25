@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IResource"
+            id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
+         <action
+               label="Open terminal"
+               class="net.hillsdon.eclipse.openterminal.OpenTerminalAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
+         </action>
+      </objectContribution>
+      <objectContribution
+            objectClass="org.eclipse.jdt.core.IJavaElement"
+            id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
+         <action
+               label="Open terminal"
+               class="net.hillsdon.eclipse.openterminal.OpenTerminalAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
