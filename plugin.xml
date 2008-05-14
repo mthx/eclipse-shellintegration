@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.2"?>
 <plugin>
-
+<extension point="org.eclipse.ui.commands">
+      <category
+            name="openshell"
+            id="net.hillsdon.eclipse.openshell.category"/>
+      <command
+            categoryId="net.hillsdon.eclipse.openshell.category"
+            name="Jump to test/implementation"
+            id="net.hillsdon.eclipse.openshell.OpenShellAction"/>
+   </extension>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            objectClass="org.eclipse.core.resources.IResource"
-            id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
+         point="org.eclipse.ui.bindings">
+         <key
+               schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+               sequence="M1+M3+S"
+               commandId="net.hillsdon.eclipse.openshell.OpenShellAction">
+         </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="openshell actions"
+            visible="true"
+            id="net.hillsdon.eclipse.openshell.actionSet">
          <action
-               label="Open terminal"
-               class="net.hillsdon.eclipse.openterminal.OpenTerminalAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
-         </action>
-      </objectContribution>
-      <objectContribution
-            objectClass="org.eclipse.jdt.core.IJavaElement"
-            id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
-         <action
-               label="Open terminal"
-               class="net.hillsdon.eclipse.openterminal.OpenTerminalAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="net.hillsdon.eclipse.openterminal.OpenTerminalAction">
-         </action>
-      </objectContribution>
+               class="net.hillsdon.eclipse.openshell.OpenShellAction"
+               icon="icons/openshell.gif"
+               id="net.hillsdon.eclipse.openshell.OpenShellAction"
+               label="Open shell"
+               toolbarPath="org.eclipse.ui.workbench.navigate/history.group"
+               definitionId="net.hillsdon.eclipse.openshell.OpenShellAction"
+               tooltip="Open shell for the current selection."/>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="net.hillsdon.eclipse.openshell.preferences.ShellIntegrationPreferencePage"
+            id="net.hillsdon.eclipse.openshell.preferences.ShellIntegrationPreferencePage"
+            name="Shell Integration">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.hillsdon.eclipse.openshell.preferences.PreferenceInitializer">
+      </initializer>
    </extension>
 
 </plugin>
