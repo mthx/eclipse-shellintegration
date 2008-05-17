@@ -14,7 +14,7 @@ public interface IResourceSelection {
   /**
    * @param selection The new workbench selection, maybe null.
    */
-  void setSelection(ISelection selection);
+  void setWorkbenchSelection(ISelection selection);
 
   /**
    * @return The workbench selection as a resource if possible, otherwise null.

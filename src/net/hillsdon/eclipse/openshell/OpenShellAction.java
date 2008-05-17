@@ -38,7 +38,7 @@ public class OpenShellAction extends Action implements IWorkbenchWindowActionDel
   }
   
   public void selectionChanged(final IAction action, final ISelection selection) {
-    _selection.setSelection(selection);
+    _selection.setWorkbenchSelection(selection);
     // We're always enabled - we can always open a shell even if it isn't at the ideal location.
   }
 

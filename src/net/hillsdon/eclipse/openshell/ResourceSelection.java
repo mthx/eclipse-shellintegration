@@ -26,7 +26,7 @@ public class ResourceSelection implements IResourceSelection {
     _workbench = workbench;
   }
   
-  public void setSelection(final ISelection selection) {
+  public void setWorkbenchSelection(final ISelection selection) {
     _selection = selection;
   }
 
