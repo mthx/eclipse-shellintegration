@@ -5,15 +5,14 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jface.text.ITextSelection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.team.ui.synchronize.ISynchronizeModelElement;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IWorkbench;
 
 /**
- * Handles IResources and IJavaElements and ITextSelections.
- * 
- * Is there a general purpose way of doing this?  Perhaps via IAdaptable...
+ * Adapts various common IDE selections to resources.
  * 
  * @author mth
  */
@@ -38,17 +37,23 @@ public class ResourceSelection implements IResourceSelection {
     }
     else if (_selection instanceof ITextSelection){
       IEditorPart editor = _workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-      IEditorInput editorInput = editor.getEditorInput();
-      if (editorInput instanceof IFileEditorInput) {
-        selected = ((IFileEditorInput) editorInput).getFile();
+      if (editor != null) {
+        IEditorInput editorInput = editor.getEditorInput();
+        if (editorInput instanceof IFileEditorInput) {
+          selected = ((IFileEditorInput) editorInput).getFile();
+        }
       }
     }
     
+    // Beautiful... oh for IHasCorrespondingResource.
     if (selected instanceof IResource) {
       return (IResource) selected;
     }
     if (selected instanceof IJavaElement) {
       return ((IJavaElement) selected).getResource();
+    }
+    if (selected instanceof ISynchronizeModelElement) {
+      return ((ISynchronizeModelElement) selected).getResource();
     }
     return null;
   }

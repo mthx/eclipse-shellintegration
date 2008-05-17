@@ -8,7 +8,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.eclipse.jface.text,
- org.eclipse.ui.ide
+ org.eclipse.ui.ide,
+ org.eclipse.team.ui
 Bundle-Vendor: Matt Hillsdon
 Bundle-Activator: net.hillsdon.eclipse.openshell.ShellIntegrationPlugin
 Eclipse-LazyStart: true
