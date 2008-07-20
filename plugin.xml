@@ -7,7 +7,7 @@
             id="net.hillsdon.eclipse.openshell.category"/>
       <command
             categoryId="net.hillsdon.eclipse.openshell.category"
-            name="Jump to test/implementation"
+            name="Open shell for the current selection"
             id="net.hillsdon.eclipse.openshell.OpenShellAction"/>
    </extension>
    <extension
