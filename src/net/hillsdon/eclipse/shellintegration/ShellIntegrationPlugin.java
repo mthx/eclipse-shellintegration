@@ -8,7 +8,7 @@
  * Contributors:
  *     Matthew Hillsdon <matt@hillsdon.net>
  *******************************************************************************/
-package net.hillsdon.eclipse.openshell;
+package net.hillsdon.eclipse.shellintegration;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

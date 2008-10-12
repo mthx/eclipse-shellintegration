@@ -8,9 +8,9 @@
  * Contributors:
  *     Matthew Hillsdon <matt@hillsdon.net>
  *******************************************************************************/
-package net.hillsdon.eclipse.openshell.preferences;
+package net.hillsdon.eclipse.shellintegration.preferences;
 
-import net.hillsdon.eclipse.openshell.ShellIntegrationPlugin;
+import net.hillsdon.eclipse.shellintegration.ShellIntegrationPlugin;
 
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringFieldEditor;

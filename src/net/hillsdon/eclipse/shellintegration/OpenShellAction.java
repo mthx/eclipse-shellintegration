@@ -8,12 +8,12 @@
  * Contributors:
  *     Matthew Hillsdon <matt@hillsdon.net>
  *******************************************************************************/
-package net.hillsdon.eclipse.openshell;
+package net.hillsdon.eclipse.shellintegration;
 
 import java.io.File;
 import java.io.IOException;
 
-import net.hillsdon.eclipse.openshell.preferences.PreferenceConstants;
+import net.hillsdon.eclipse.shellintegration.preferences.PreferenceConstants;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;

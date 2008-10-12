@@ -8,7 +8,7 @@
  * Contributors:
  *     Matthew Hillsdon <matt@hillsdon.net>
  *******************************************************************************/
-package net.hillsdon.eclipse.openshell.preferences;
+package net.hillsdon.eclipse.shellintegration.preferences;
 
 public final class PreferenceConstants {
 
