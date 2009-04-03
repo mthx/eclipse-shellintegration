@@ -10,13 +10,12 @@
  *******************************************************************************/
 package net.hillsdon.eclipse.shellintegration;
 
-import java.io.File;
 import java.io.IOException;
 
+import net.hillsdon.eclipse.selection2resource.IResourceSelection;
+import net.hillsdon.eclipse.selection2resource.ResourceSelection;
 import net.hillsdon.eclipse.shellintegration.preferences.PreferenceConstants;
 
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -53,14 +52,8 @@ public class OpenShellAction extends Action implements IWorkbenchWindowActionDel
   }
 
   public void run(final IAction action) {
-    final IResource resource = _selection.getSelectedResource();
-    final IPath path = resource == null ? null : resource.getLocation();
-    File file = path == null ? null : path.toFile();
-    while (file != null && !file.isDirectory()) {
-      file = file.getParentFile();
-    }
     try {
-      Runtime.getRuntime().exec(_preferences.getString(PreferenceConstants.SHELL_COMMAND), null, file);
+      Runtime.getRuntime().exec(_preferences.getString(PreferenceConstants.SHELL_COMMAND), null, _selection.asDirectory());
     }
     catch (IOException ex) {
       MessageDialog.openError(_window.getShell(), "Failed to launch shell", "Failed to launch the shell.  Please check your preferences.\nThe error was:\n\n" + ex.getLocalizedMessage());
