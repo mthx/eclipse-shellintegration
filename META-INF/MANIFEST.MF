@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface.text,
  org.eclipse.ui.ide,
  org.eclipse.team.ui,
- net.hillsdon.eclipse.selection2resource;bundle-version="1.0.0"
+ net.hillsdon.eclipse.selection2resource
 Bundle-Vendor: Matt Hillsdon
 Bundle-Activator: net.hillsdon.eclipse.shellintegration.ShellIntegrationPlugin
 Eclipse-LazyStart: true
