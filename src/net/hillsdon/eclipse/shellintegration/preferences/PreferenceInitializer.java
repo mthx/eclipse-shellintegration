@@ -19,8 +19,14 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = ShellIntegrationPlugin.getDefault().getPreferenceStore();
-		// We could switch on OS / window-manager here, or availability in path or similar.
-		store.setDefault(PreferenceConstants.SHELL_COMMAND, "gnome-terminal");
+		String windows = "cmd /c start cmd";
+        // It would be good if this was cleverer...
+        String fallback = "gnome-terminal";
+		store.setDefault(PreferenceConstants.SHELL_COMMAND, isWindows() ? windows : fallback);
 	}
+
+   private static boolean isWindows() {
+     return System.getProperty("os.name").startsWith("Windows");
+   }
 
 }
