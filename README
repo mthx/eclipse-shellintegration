@@ -1,0 +1,8 @@
+Eclipse plugin that launches a terminal with the shell working directory set
+based on the Eclipse selection.
+
+https://github.com/mthx/eclipse-shellintegrationa
+
+This plugin requires
+https://github.com/mthx/eclipse-selection2resource
+
