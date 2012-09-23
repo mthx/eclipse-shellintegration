@@ -13,4 +13,5 @@ Require-Bundle: org.eclipse.ui,
  net.hillsdon.eclipse.selection2resource
 Bundle-Vendor: Matt Hillsdon
 Bundle-Activator: net.hillsdon.eclipse.shellintegration.ShellIntegrationPlugin
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
